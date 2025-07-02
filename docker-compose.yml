@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   n8n:
-    image: n8nio/n8n
+    image: docker.n8n.cloud/n8n-custom-path:latest
     container_name: n8n
     ports:
       - "5678:5678"
@@ -15,8 +15,8 @@ services:
       - N8N_PROTOCOL=http
       - NODE_ENV=production
       - TZ=America/Sao_Paulo
-      - N8N_PATH=/n8n
-      - VUE_APP_PATH=/n8n
+      - N8N_PATH=/n8n/
+      - VUE_APP_PATH=/n8n/
     volumes:
       - n8n_data:/home/node/.n8n
     restart: always
