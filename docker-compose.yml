@@ -16,7 +16,8 @@ services:
       - NODE_ENV=production
       - TZ=America/Sao_Paulo
       - N8N_PATH=/n8n/
-      - VUE_APP_PATH=/n8n/
+      - VUE_APP_PATH=/n8n/  
+      - N8N_SECURE_COOKIE=false
     volumes:
       - n8n_data:/home/node/.n8n
     restart: always
