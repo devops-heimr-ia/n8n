@@ -10,7 +10,7 @@ services:
       - N8N_BASIC_AUTH_ACTIVE=true
       - N8N_BASIC_AUTH_USER=admin
       - N8N_BASIC_AUTH_PASSWORD=admin123
-      - N8N_HOST=${N8N_EXTERNAL_HOST}
+      - N8N_HOST=${N8N_BASE_URL}
       - N8N_PORT=5678
       - N8N_PROTOCOL=http
       - NODE_ENV=production
@@ -18,7 +18,7 @@ services:
       - N8N_PATH=/n8n/
       - VUE_APP_PATH=/n8n/  
       - N8N_SECURE_COOKIE=false
-      - N8N_EDITOR_BASE_URL=${N8N_BASE_URL}:5678/n8n/
+      - N8N_EDITOR_BASE_URL=http://${N8N_BASE_URL}:5678/n8n/
     volumes:
       - n8n_data:/home/node/.n8n
     restart: always
